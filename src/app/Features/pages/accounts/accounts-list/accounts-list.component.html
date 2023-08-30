@@ -1,0 +1,44 @@
+<h3 class="text-center">
+  <span class="text-muted">Gestor de </span>
+  <span style="color:#dc3545;">Cuentas</span>
+  <button [routerLink]="['/account/create']" class="btn btn-danger">Crear cuenta</button>
+  <hr>
+</h3>
+
+<nav>
+  <div class="nav nav-tabs">
+    <button class="nav-link active">Cuentas</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active">
+    <table class="table table-hover table-responsive-md">
+      <thead class="thead" style="color: #dc3545">
+        <tr>
+          <th scope="col">Identificador</th>
+          <th scope="col">account number</th>
+          <th scope="col">account type</th>
+          <th scope="col">Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let account of accounts">
+          <th scope="row">{{ account.id }}</th>
+          <td>{{ account.accountNumber }}</td>
+          <td>{{ account.accountType | accountType: true}}</td>
+          <td>{{ account.status | statusPipe : true }}</td>
+          <td>
+            <i routerLink="/account/edit/{{account.id}}" class="fa-solid fa-pen-to-square p-2" style="color: green; cursor: pointer;"> </i>
+            <i (click)="deleteAccounts(account.id)" class="fa-solid fa-trash" style="color: red; cursor: pointer;"></i>
+          </td>
+          <td>
+            <a routerLink="/account/details/{{ account.id }}">
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

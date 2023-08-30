@@ -1,0 +1,44 @@
+<h3 class="text-center">
+  <span class="text-muted">Gestor de </span>
+  <span style="color:#dc3545;">Tarjetas</span>
+  <button [routerLink]="['/card/create']" class="btn btn-danger">Crear tarjeta</button>
+  <hr>
+</h3>
+
+<nav>
+  <div class="nav nav-tabs">
+    <button class="nav-link active">Tarjetas</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active">
+    <table class="table table-hover table-responsive-md">
+      <thead class="thead" style="color: #dc3545">
+        <tr>
+          <th scope="col">Identificador</th>
+          <th scope="col">card number</th>
+          <th scope="col">card ammount</th>
+          <th scope="col">card type</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let card of cards">
+          <th scope="row">{{ card.id }}</th>
+          <td>{{ card.cardNumber }}</td>
+          <td>{{ card.ammount }}</td>
+          <td>{{ card.status | cardType : true }}</td>
+          <td>
+            <i routerLink="/card/edit/{{card.id}}" class="fa-solid fa-pen-to-square p-2" style="color: green; cursor:pointer;"> </i>
+            <i (click)="deleteCard(card.id)" class="fa-solid fa-trash" style="color: red; cursor:pointer;"></i>
+          </td>
+          <td>
+            <a routerLink="/card/details/{{ card.id }}">
+              <i class="fa-solid fa-angle-right"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

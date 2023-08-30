@@ -1,0 +1,81 @@
+<h3 class="text-center">
+  <span class="text-muted" style="color: #dc3545">Información Usuario:</span><hr/>
+</h3>
+
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col">
+        <div class="input_container">
+          <div class="input_div">
+            <label class="form-label">Name</label>
+            <input formControlName="firstName" type="text" placeholder="Name" class="form-control" />
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">LastName</label>
+            <input formControlName="lastName" type="text" placeholder="LastName" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">Email</label>
+            <input formControlName="email" type="email" placeholder="Email" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">PhoneNumber</label>
+            <input formControlName="phoneNumber" type="number" placeholder="PhoneNumber" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">BirthDate</label>
+            <input formControlName="birthDate" type="date" placeholder="BirthDate" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">DNI</label>
+            <input formControlName="idNumber" type="text" placeholder="DNI" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">Status</label>
+            <select type="number" formControlName="status" class="form-control">
+              <option [disabled]="true" [value]="0">- Selecciona una opción -</option>
+              <option *ngFor="let userStatus of userStatus" [value]="userStatus.key">{{userStatus.key}} - {{userStatus.value}}</option>
+            </select>
+          </div>
+        </div>
+
+        <h3 class="text-muted" style="margin-top:-3px;">Dirección Usuario</h3><hr>
+
+        <div class="input_container" formGroupName="address">
+          <div class="input_div">
+            <label class="form-label">Street</label>
+            <input formControlName="street" type="text" placeholder="Street" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">Home #</label>
+            <input formControlName="number" type="text" placeholder="#" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">City</label>
+            <input formControlName="city" type="text" placeholder="City" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">State</label>
+            <input formControlName="state" type="text" placeholder="State" class="form-control"/>
+          </div>
+
+          <div class="input_div col-md-5">
+            <label class="form-label">Zip</label>
+            <input formControlName="zip" type="text" placeholder="Zip" class="form-control"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-danger regular-button mt-3" type="submit">Aceptar</button>
+  </form>
+</div>

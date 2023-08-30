@@ -1,0 +1,82 @@
+<h3 class="text-center">
+  <span class="text-muted">Usuario:</span>
+  <span style="color: #dc3545">{{user.firstName}}</span>
+  <hr />
+</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="input_container">
+        <div class="input_div">
+          <span>Status: <i class="fa-regular fa-hashtag"></i></span>
+          <p>{{ user.status | userState : true }}</p>
+        </div>
+
+        <div class="input_div">
+          <span>Nombre: <i class="fa-sharp fa-solid fa-user"></i></span>
+          <p>{{ user.firstName }}</p>
+        </div>
+
+        <div class="input_div">
+          <span>Apellido <i class="fa-sharp fa-solid fa-user"></i></span>
+          <p>{{ user.lastName }}</p>
+        </div>
+
+        <div class="input_div">
+          <span>Correo <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ user.email }}</p>
+        </div>
+
+        <div class="input_div">
+          <span>Telefono <i class="fa-solid fa-phone"></i></span>
+          <p>{{ user.phoneNumber }}</p>
+        </div>
+
+        <div class="input_div">
+          <span>Cedula <i class="fa-solid fa-hashtag"></i></span>
+          <p>{{ user.idNumber }}</p>
+        </div>
+
+        <div class="input_div">
+          <span
+            >Fecha de nacimiento <i class="fa-solid fa-cake-candles"></i
+          ></span>
+          <p>{{ user.birthDate | date : 'short'}}</p>
+        </div>
+      </div>
+
+      <h3 class="text-center">
+        <span class="text-muted">Dirección</span>
+        <hr />
+      </h3>
+
+      <div class="input_container">
+        <div class="input_div">
+          <span>City <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ user.address.city }}</p>
+        </div>
+
+        <div class="input_div">
+          <span>State <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ user.address.state }}</p>
+        </div>
+
+        <div class="input_div">
+          <span>Street <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ user.address.street }}</p>
+        </div>
+
+        <div class="input_div">
+          <span>Number <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ user.address.number }}</p>
+        </div>
+
+        <div class="input_div">
+          <span>ZIP <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ user.address.zip }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

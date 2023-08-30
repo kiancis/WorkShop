@@ -1,0 +1,44 @@
+<h3 class="text-center">
+  <span class="text-muted">Tajerta de usuario:</span>
+  <span style="color: #dc3545">{{card.userId}}</span>
+  <hr />
+</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="input_container">
+        <div class="input_div">
+          <span>Card Number: <i class="fa-regular fa-user"></i></span>
+          <p>{{ card.cardNumber }}</p>
+        </div>
+        <div class="input_div">
+          <span>Card Type: <i class="fa-regular fa-user"></i></span>
+          <p>{{ card.cardType | cardType : true}}</p>
+        </div>
+        <div class="input_div">
+          <span>Ammount <i class="fa-sharp fa-solid fa-user"></i></span>
+          <p>{{ card.ammount }}</p>
+        </div>
+        <div class="input_div">
+          <span>Balance <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ card.balance }}</p>
+        </div>
+        <div class="input_div">
+          <span>Status <i class="fa-solid fa-phone"></i></span>
+          <p>{{ card.status | statusPipe : true }}</p>
+        </div>
+        <div class="input_div">
+          <span>Usuario <i class="fa-solid fa-hashtag"></i></span>
+          <p>{{ card.userId }}</p>
+        </div>
+        <div class="input_div">
+          <span
+            >Creación <i class="fa-solid fa-cake-candles"></i
+          ></span>
+          <p>{{ card.createdAt | date : 'short'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

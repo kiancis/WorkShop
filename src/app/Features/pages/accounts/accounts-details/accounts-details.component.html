@@ -1,0 +1,40 @@
+<h3 class="text-center">
+  <span class="text-muted">Cuenta de usuario:</span>
+  <span style="color: #dc3545">{{account.userId}}</span>
+  <hr />
+</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="input_container">
+        <div class="input_div">
+          <span>Account Number: <i class="fa-regular fa-user"></i></span>
+          <p>{{ account.accountNumber }}</p>
+        </div>
+        <div class="input_div">
+          <span>Balance <i class="fa-sharp fa-solid fa-user"></i></span>
+          <p>{{ account.balance }}</p>
+        </div>
+        <div class="input_div">
+          <span>Account Type <i class="fa-solid fa-envelope"></i></span>
+          <p>{{ account.accountType | accountType : true}}</p>
+        </div>
+        <div class="input_div">
+          <span>Status <i class="fa-solid fa-phone"></i></span>
+          <p>{{ account.status | statusPipe : true}}</p>
+        </div>
+        <div class="input_div">
+          <span>Usuario <i class="fa-solid fa-hashtag"></i></span>
+          <p>{{ account.userId }}</p>
+        </div>
+        <div class="input_div">
+          <span
+            >Creación <i class="fa-solid fa-cake-candles"></i
+          ></span>
+          <p>{{ account.createdAt | date : 'short' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

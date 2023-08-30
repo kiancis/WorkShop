@@ -1,0 +1,50 @@
+<h3 class="text-center">
+  <span class="text-muted" style="color: #dc3545">Información Tarjeta</span><hr/>
+</h3>
+
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col">
+        <div class="input_container">
+          <div class="input_div">
+            <label class="form-label">Card Number</label>
+            <input formControlName="cardNumber" type="text" placeholder="Card Number" class="form-control" />
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">Card Type</label>
+            <select formControlName="cardType" class="form-control">
+              <option [disabled]="true" [value]="0">- Selecciona una opción -</option>
+              <option *ngFor="let cardType of cardType" [value]="cardType.key">{{cardType.key}} - {{cardType.value}}</option>
+            </select>
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">Status</label>
+            <select formControlName="status" class="form-control">
+              <option [disabled]="true" [value]="0">- Selecciona una opción -</option>
+              <option *ngFor="let cardStatus of cardStatus" [value]="cardStatus.key">{{cardStatus.key}} - {{cardStatus.value}}</option>
+            </select>
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">Ammount</label>
+            <input formControlName="ammount" type="number" placeholder="Ammount" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">Balance</label>
+            <input formControlName="balance" type="number" placeholder="Balance" class="form-control"/>
+          </div>
+
+          <div class="input_div">
+            <label class="form-label">User Id</label>
+            <input formControlName="userId" type="number" placeholder="User Id" class="form-control"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-danger regular-button mt-3" type="submit">Aceptar</button>
+  </form>
+</div>
